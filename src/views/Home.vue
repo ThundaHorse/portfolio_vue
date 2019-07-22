@@ -17,7 +17,7 @@
 
         <h1>
           <p>
-            My name is {{ abe.name }}. 
+            My name is Abraham Kim. 
               <br>
             I put pieces of the web together with my tools.
           </p>
