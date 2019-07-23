@@ -105,7 +105,7 @@
                 v-for="n in expText"
                 :key="n"
               >
-                <v-card>
+                <v-card :dark="true">
                   <v-card-title>
                     <h3>
                       {{ n.name }} 
@@ -140,14 +140,84 @@
                   <h1>Let's Go to Disney!</h1>
                     <hr>
                     <br>
-                <h4 style="float: right;">VueJS • Ruby on Rails • Ruby • Javascript</h4>
+                <h4 style="float: right; border-bottom: solid;">VueJS • Ruby on Rails • Ruby • Javascript</h4>
                 </span>
               </v-flex>
-                <br>
             </v-layout>
-
+          <!-- Custom Rake png -->
             <v-layout>
               <v-flex md6 offset-sm1>
+                <div class="container">
+                  <span class="rake" style='float:left;'>
+                    <div class="text-xs-center" id='rake'>
+                      <v-dialog
+                        v-model="dialog"
+                        width="600"
+                      >
+                        <template v-slot:activator="{ on }">
+                          <v-btn
+                            color="teal lighten-2"
+                            dark
+                            v-on="on"
+                          > 
+                          Rake
+                          </v-btn>
+                        </template>
+                  
+                        <v-card
+                          :dark="true"
+                        >
+                          <v-card-title
+                            class="headline grey darken-1"
+                            primary-title
+                          >
+                            Custom rake task
+                          </v-card-title>
+                          <v-card-text>
+                            <img src="../../public/disney_app_pics/custom_rake.png" style="width: 500px; height: auto;">
+                          </v-card-text>
+                          <v-divider></v-divider>
+                        </v-card>
+                      </v-dialog>
+                    </div>
+                  </span>
+
+                  <span class="script">
+                    <div class="text-xs-center" id='script'>
+                      <v-dialog
+                        v-model="dialog"
+                        width="1100"
+                      >
+                        <template v-slot:activator="{ on }">
+                          <v-btn
+                            color="green lighten-2"
+                            dark
+                            v-on="on"
+                          > 
+                          Script
+                          </v-btn>
+                        </template>
+                  
+                        <v-card
+                          :dark="true"
+                          width="1100"
+                        >
+                          <v-card-title
+                            class="headline grey darken-1"
+                            primary-title
+                          >
+                            Custom script file to access Node.js database 
+                          </v-card-title>
+                          <v-card-text>
+                            <img src="../../public/disney_app_pics/disney_script.png" style="width: 1000px; height: auto;">
+                          </v-card-text>
+                          <v-divider></v-divider>
+                        </v-card>
+                      </v-dialog>
+                    </div>
+                  </span>
+                </div>
+
                 <h4>
                   An app that used a Rails back-end and a VueJS front-end 
                     <br>
@@ -174,14 +244,18 @@
               <v-flex md6 offset-sm1>
                 <span class="costgo" style="float:left;">
                   <br>
-                  <br>
                     <h1>Cost-Go</h1>
                     <hr>
                   <br>
-                <h4 style="float: right;">Ruby • Sinatra</h4>
+                <h4 style="float: right; border-bottom: solid;">Ruby • Sinatra</h4>
+                  <br>
+                <span class="githubicon" style="float:right; padding-top: 5px;">
+                  <a href="https://github.com/ThundaHorse/costgo_app"><img
+                      src="https://image.flaticon.com/icons/png/512/3/3641.png"
+                      style="height: 30px; width: 30px;" atl="Github"></a>
+                  </span>
                 </span>
               </v-flex>
-                <br>
             </v-layout>
 
             <v-layout>
@@ -214,14 +288,21 @@
               <v-flex md8 offset-sm2>
                 <span class="tripper" style="float:right;">
                     <br>
-                    <br>
                   <h1>Tripper</h1>
                     <hr>
                     <br>
-                <h4 style="float: right;">Ruby on Rails • Ruby • VueJS • Javascript</h4>
+                <h4 style="float: right; border-bottom: solid;">Ruby on Rails • Ruby • VueJS • Javascript</h4>
+                  <br>
+                  <span class="githubicon" style="float: right;">
+                      <a href="https://github.com/ThundaHorse/tripper_vue_app"><img
+                          src="https://image.flaticon.com/icons/png/512/3/3641.png"
+                          style="height: 30px; width: 30px;" atl="tripperFront">Front</a>
+                      <a href="https://github.com/ThundaHorse/tripper_app"><img
+                          src="https://image.flaticon.com/icons/png/512/3/3641.png"
+                          style="height: 30px; width: 30px;" atl="tripperBack">Back</a>
+                  </span>
                 </span>
               </v-flex>
-                <br>
             </v-layout>
 
             <v-layout>
@@ -255,15 +336,20 @@
   li {
     display: inline;
   }
+  
 </style>
 
 <script>
 import axios from 'axios'
+import JQuery from 'jquery'
+let $ = JQuery;
 
 export default {
   data: function() {
     return {
       abe: [],
+      test: "", 
+      dialogue: false,
       expText: [{
                 logo: "https://anyonecanlearntocode.com/assets/actualize-logo-158d4b4cceb72d78f91dbd8bde4eabb9c71a2eba651c10dbc5d4cbf6c96c3afa.png",
                 name: "Actualize • Web Developer", 
@@ -287,6 +373,9 @@ export default {
   methods: {
     redirButton(input) {
       window.location.replace(input);
+    },
+    testing() {
+      this.test = $('div.container').textContent;
     }
   }
 };
