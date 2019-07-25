@@ -336,7 +336,6 @@
   li {
     display: inline;
   }
-  
 </style>
 
 <script>
