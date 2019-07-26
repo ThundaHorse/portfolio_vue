@@ -135,11 +135,9 @@
     
     <div id="projects">
       <h1 style="margin-left: 20px;">Here's some stuff I worked on</h1>
-      
-
       <v-parallax
-      height="1000"
-      src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+      height="900"
+      src="https://i.pinimg.com/originals/9d/4d/07/9d4d07ca7d591bb3cd3d9f4df2624bbf.jpg"
       >
         <v-layout column>
           <v-timeline :dense="$vuetify.breakpoint.smAndDown">
@@ -148,7 +146,7 @@
                 fill-dot
                 right
               >
-                <v-card dark> 
+                <v-card dark elevation="30"> 
                   <v-card-title class="purple lighten-2">
                     <v-icon
                       dark
@@ -254,7 +252,7 @@
                 left
                 small
               >
-                <v-card dark>
+                <v-card dark elevation="30">
                   <v-card-title class="amber lighten-1 justify-end">
                     <h2 class="display-1 mr-4 white--text font-weight-light">Tripper</h2>
                     <v-icon
@@ -290,7 +288,7 @@
                 fill-dot
                 right
               >
-                <v-card dark>
+                <v-card dark elevation="30">
                   <v-card-title class="cyan lighten-1">
                     <v-icon
                       class="mr-4"
@@ -321,9 +319,7 @@
           </v-timeline>
         </v-layout>
       </v-parallax>
-        <br>
         <hr>
-
     </div>  
 
   </div>
