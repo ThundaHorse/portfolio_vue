@@ -4,8 +4,10 @@ import router from './router'
 import axios from 'axios' 
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import VueScrollReveal from 'vue-scroll-reveal';
 
 Vue.use(Vuetify)
+Vue.use(VueScrollReveal);
 
 Vue.config.productionTip = false
 
