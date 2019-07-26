@@ -86,10 +86,12 @@
       <h1 style="margin-left: 10px;">My Experience</h1>
         <br>
         <v-layout>
-          <v-flex md10 offset-sm1>
+          <!-- <v-flex md10 offset-sm1> -->
+          <v-card>
             <v-tabs
               v-model="active"
               color="cyan"
+              :vertical="true"
               dark
               slider-color="yellow"
             >
@@ -105,7 +107,11 @@
                 v-for="n in expText"
                 :key="n"
               >
-                <v-card :dark="true">
+                <v-card 
+                  :dark="true"
+                  :raised="true"
+                  :width="600"
+                  >
                   <v-card-title>
                     <h3>
                       {{ n.name }} 
@@ -120,213 +126,204 @@
                 </v-card>
               </v-tab-item>
             </v-tabs>
-          </v-flex>
+          <!-- </v-flex> -->
+          </v-card>
         </v-layout>
     </div>
 
       <hr>
     
-    <div class="container" id="projects">
+    <div id="projects">
       <h1 style="margin-left: 20px;">Here's some stuff I worked on</h1>
       
-      <div class="container">
 
-        <div class="container">
-          <div class="disney">
-            <v-layout>
-              <v-flex md8 offset-sm2>
-                <span class="disney" style="float:right;">
-                  <br>
-                  <h1>Let's Go to Disney!</h1>
-                    <hr>
-                    <br>
-                <h4 style="float: right; border-bottom: solid;">VueJS • Ruby on Rails • Ruby • Javascript</h4>
-                </span>
-              </v-flex>
-            </v-layout>
-          <!-- Custom Rake png -->
-            <v-layout>
-              <v-flex md6 offset-sm1>
-                <div class="container">
-                  <span class="rake" style='float:left;'>
-                    <div class="text-xs-center" id='rake'>
-                      <v-dialog
-                        v-model="dialog"
-                        width="600"
+      <v-parallax
+      height="1000"
+      src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+      >
+        <v-layout column>
+          <v-timeline :dense="$vuetify.breakpoint.smAndDown">
+              <v-timeline-item
+                color="purple lighten-2"
+                fill-dot
+                right
+              >
+                <v-card dark> 
+                  <v-card-title class="purple lighten-2">
+                    <v-icon
+                      dark
+                      size="42"
+                      class="mr-4"
+                    >
+                      mdi-magnify
+                    </v-icon>
+                    <h2 class="display-1 white--text font-weight-light">Let's Go to Disney!</h2>
+                  </v-card-title>
+                  <v-container>
+                    <h4>VueJS • Ruby on Rails • Ruby • Javascript</h4>
+                      <br>
+                    <v-layout>
+                      <v-flex xs12 md10>
+                        An app that used a Rails back-end and a VueJS front-end a user is able to create an account and log in to view user info in addition to creating an itinerary to plan a day at Disney, attraction wait times are updated in real-time by utilizing Action Cable and custom rake tasks in Rails that utilizes a custom script to be run at set intervals. in conjunction with the API to gather times, the script file access the Rails database and updates the attraction models which in turn is updated in the Vue app by Action Cable. 
+                      </v-flex>
+                      <v-flex
+                        md2
+                        hidden-sm-and-down
+                        text-right
                       >
-                        <template v-slot:activator="{ on }">
-                          <v-btn
-                            color="teal lighten-2"
-                            dark
-                            v-on="on"
-                          > 
-                          Rake
-                          </v-btn>
-                        </template>
-                  
-                        <v-card
-                          :dark="true"
-                        >
-                          <v-card-title
-                            class="headline grey darken-1"
-                            primary-title
+                        <v-icon size="64">mdi-calendar-text</v-icon>
+                      </v-flex>
+                    </v-layout>
+                      <br>
+                      <!-- Rake --> 
+                      <span class="rake" style='float:left;'>
+                        <div class="text-xs-center" id='rake'>
+                          <v-dialog
+                            v-model="dialog"
+                            width="600"
                           >
-                            Custom rake task
-                          </v-card-title>
-                          <v-card-text>
-                            <img src="../../public/disney_app_pics/custom_rake.png" style="width: 500px; height: auto;">
-                          </v-card-text>
-                          <v-divider></v-divider>
-                        </v-card>
-                      </v-dialog>
-                    </div>
-                  </span>
-
-                  <span class="script">
-                    <div class="text-xs-center" id='script'>
-                      <v-dialog
-                        v-model="dialog"
-                        width="1100"
-                      >
-                        <template v-slot:activator="{ on }">
-                          <v-btn
-                            color="green lighten-2"
-                            dark
-                            v-on="on"
-                          > 
-                          Script
-                          </v-btn>
-                        </template>
-                  
-                        <v-card
-                          :dark="true"
-                          width="1100"
-                        >
-                          <v-card-title
-                            class="headline grey darken-1"
-                            primary-title
+                            <template v-slot:activator="{ on }">
+                              <v-btn
+                                color="teal lighten-2"
+                                dark
+                                v-on="on"
+                              > 
+                              Rake
+                              </v-btn>
+                            </template>
+                      
+                            <v-card
+                              :dark="true"
+                            >
+                              <v-card-title
+                                class="headline grey darken-1"
+                                primary-title
+                              >
+                                Custom rake task
+                              </v-card-title>
+                              <v-card-text>
+                                <img src="../../public/disney_app_pics/custom_rake.png" style="width: 500px; height: auto;">
+                              </v-card-text>
+                              <v-divider></v-divider>
+                            </v-card>
+                          </v-dialog>
+                        </div>
+                      </span>
+                      <!-- Script --> 
+                      <span class="script">
+                        <div class="text-xs-center" id='script'>
+                          <v-dialog
+                            v-model="dialog"
+                            width="1100"
                           >
-                            Custom script file to access Node.js database 
-                          </v-card-title>
-                          <v-card-text>
-                            <img src="../../public/disney_app_pics/disney_script.png" style="width: 1000px; height: auto;">
-                          </v-card-text>
-                          <v-divider></v-divider>
-                        </v-card>
-                      </v-dialog>
-                    </div>
-                  </span>
-                </div>
+                            <template v-slot:activator="{ on }">
+                              <v-btn
+                                color="green lighten-2"
+                                dark
+                                v-on="on"
+                              > 
+                              Script
+                              </v-btn>
+                            </template>
+                      
+                            <v-card
+                              :dark="true"
+                              width="1100"
+                            >
+                              <v-card-title
+                                class="headline grey darken-1"
+                                primary-title
+                              >
+                                Custom script file to access Node.js database 
+                              </v-card-title>
+                              <v-card-text>
+                                <img src="../../public/disney_app_pics/disney_script.png" style="width: 1000px; height: auto;">
+                              </v-card-text>
+                              <v-divider></v-divider>
+                            </v-card>
+                          </v-dialog>
+                        </div>
+                      </span>
+                  </v-container>
+                </v-card>
+              </v-timeline-item>
+          
+              <v-timeline-item
+                color="amber lighten-1"
+                fill-dot
+                left
+                small
+              >
+                <v-card dark>
+                  <v-card-title class="amber lighten-1 justify-end">
+                    <h2 class="display-1 mr-4 white--text font-weight-light">Tripper</h2>
+                    <v-icon
+                      dark
+                      size="42"
+                    >mdi-home-outline</v-icon>
+                  </v-card-title>
+                  <v-container>
+                    <h4 style='text-align: right;'>Ruby on Rails • Ruby • VueJS • Javascript</h4>
+                    <v-layout wrap>
+                      <v-flex style="text-align: right;">
+                          <br>
+                        Utilized Twilio, Ngrok, Rails, VueJS to provide real-time flight status updates and monitoring and update users for flight information and statuses. Utilized API to gather airport codes and display relative locations for lodging and food. 
+                          <br> 
+                        Multi-page app that listed airports and options to sort flights by status, city, and flight status. Added option for only admins able to edit flights. In order to verify a user was an admin, utilized authentication and authorization in Rails back end.
+                      </v-flex>
+                        <br>
+                      <span class="githubicon" style="float: right;">
+                          <a href="https://github.com/ThundaHorse/tripper_vue_app"><img
+                              src="https://image.flaticon.com/icons/png/512/3/3641.png"
+                              style="height: 30px; width: 30px;" atl="tripperFront">Front</a>
+                          <a href="https://github.com/ThundaHorse/tripper_app"><img
+                              src="https://image.flaticon.com/icons/png/512/3/3641.png"
+                              style="height: 30px; width: 30px;" atl="tripperBack">Back</a>
+                      </span>
+                    </v-layout>
+                  </v-container>
+                </v-card>
+              </v-timeline-item>
+          
+              <v-timeline-item
+                color="cyan lighten-1"
+                fill-dot
+                right
+              >
+                <v-card dark>
+                  <v-card-title class="cyan lighten-1">
+                    <v-icon
+                      class="mr-4"
+                      dark
+                      size="42"
+                    >
+                      mdi-email-outline
+                    </v-icon>
+                    <h2 class="display-1 white--text font-weight-light">Cost-Go</h2>
+                  </v-card-title>
+                  <v-container>
+                    <h4>Sinatra • Ruby</h4>
+                      <br>
+                    <v-layout wrap>
+                        Lightweight app that calculated cost comparison using Google Maps API to determine cost-benefit of public transportation vs vehicular travel. Utilized Sinatra to manage requests and view rendering. 
+                          <br> 
+                        User is able to input starting and ending destinations to view information such as distance, time to destination, trip duration.
+                          <br>
+                        <span class="githubicon" style="float:right; padding-top: 5px;">
+                        <a href="https://github.com/ThundaHorse/costgo_app"><img
+                            src="https://image.flaticon.com/icons/png/512/3/3641.png"
+                            style="height: 30px; width: 30px;" atl="Github"></a>
+                        </span>
+                    </v-layout>
+                  </v-container>
+                </v-card>
+              </v-timeline-item>
+          </v-timeline>
+        </v-layout>
+      </v-parallax>
+        <br>
+        <hr>
 
-                <h4>
-                  An app that used a Rails back-end and a VueJS front-end 
-                    <br>
-                  A user is able to create an account and log in to view user info
-                    <br>
-                  In addition to creating an itinerary to plan a day at Disney, attraction wait times are 
-                    <br>
-                  updated in real-time by utilizing Action Cable and custom rake tasks in Rails that 
-                    <br>
-                  utilizes a custom script to be run at set intervals. in conjunction with the API 
-                    <br>
-                  to gather times, the script file access the Rails database and updates the attraction 
-                    <br>
-                  models which in turn is updated in the Vue app by Action Cable. 
-                </h4>
-              </v-flex>
-            </v-layout>
-          </div>
-            
-            <br>
-
-          <div class="costgo">
-            <v-layout>
-              <v-flex md6 offset-sm1>
-                <span class="costgo" style="float:left;">
-                  <br>
-                    <h1>Cost-Go</h1>
-                    <hr>
-                  <br>
-                <h4 style="float: right; border-bottom: solid;">Ruby • Sinatra</h4>
-                  <br>
-                <span class="githubicon" style="float:right; padding-top: 5px;">
-                  <a href="https://github.com/ThundaHorse/costgo_app"><img
-                      src="https://image.flaticon.com/icons/png/512/3/3641.png"
-                      style="height: 30px; width: 30px;" atl="Github"></a>
-                  </span>
-                </span>
-              </v-flex>
-            </v-layout>
-
-            <v-layout>
-              <v-flex md8 offset-sm2>
-                <span class="costgo" style="float: right;">
-                  <h4>
-                    An app that used a Rails back-end and a VueJS front-end 
-                      <br>
-                    A user is able to create an account and log in to view user info
-                      <br>
-                    In addition to creating an itinerary to plan a day at Disney, attraction wait times are 
-                      <br>
-                    updated in real-time by utilizing Action Cable and custom rake tasks in Rails that 
-                      <br>
-                    utilizes a custom script to be run at set intervals. in conjunction with the API 
-                      <br>
-                    to gather times, the script file access the Rails database and updates the attraction 
-                      <br>
-                    models which in turn is updated in the Vue app by Action Cable. 
-                  </h4>
-                </span>
-              </v-flex>
-            </v-layout>
-          </div>
-            
-            <br>
-
-          <div class="tripper">
-            <v-layout>
-              <v-flex md8 offset-sm2>
-                <span class="tripper" style="float:right;">
-                    <br>
-                  <h1>Tripper</h1>
-                    <hr>
-                    <br>
-                <h4 style="float: right; border-bottom: solid;">Ruby on Rails • Ruby • VueJS • Javascript</h4>
-                  <br>
-                  <span class="githubicon" style="float: right;">
-                      <a href="https://github.com/ThundaHorse/tripper_vue_app"><img
-                          src="https://image.flaticon.com/icons/png/512/3/3641.png"
-                          style="height: 30px; width: 30px;" atl="tripperFront">Front</a>
-                      <a href="https://github.com/ThundaHorse/tripper_app"><img
-                          src="https://image.flaticon.com/icons/png/512/3/3641.png"
-                          style="height: 30px; width: 30px;" atl="tripperBack">Back</a>
-                  </span>
-                </span>
-              </v-flex>
-            </v-layout>
-
-            <v-layout>
-              <v-flex md6 offset-sm1>
-                <h4>
-                  An app that used a Rails back-end and a VueJS front-end 
-                    <br>
-                  A user is able to create an account and log in to view user info
-                    <br>
-                  In addition to creating an itinerary to plan a day at Disney, attraction wait times are 
-                    <br>
-                  updated in real-time by utilizing Action Cable and custom rake tasks in Rails that 
-                    <br>
-                  utilizes a custom script to be run at set intervals. in conjunction with the API 
-                    <br>
-                  to gather times, the script file access the Rails database and updates the attraction 
-                    <br>
-                  models which in turn is updated in the Vue app by Action Cable. 
-                </h4>
-              </v-flex>
-            </v-layout>
-          </div>
-        </div>
-      </div>
     </div>  
 
   </div>
@@ -340,8 +337,6 @@
 
 <script>
 import axios from 'axios'
-import JQuery from 'jquery'
-let $ = JQuery;
 
 export default {
   data: function() {
@@ -372,9 +367,6 @@ export default {
   methods: {
     redirButton(input) {
       window.location.replace(input);
-    },
-    testing() {
-      this.test = $('div.container').textContent;
     }
   }
 };
