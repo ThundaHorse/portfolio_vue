@@ -73,11 +73,12 @@
       <hr>
     <div class="about">
       <v-parallax
-        height="1030"
+        height="1050"
         src="https://i.redd.it/4pgc1u4rdrv21.jpg"
         >
         <section v-scroll-reveal.reset="{ delay: 300 }">
-          <h1>About me!</h1>
+            <br>
+          <h1 style="margin-left: 10px;">About me!</h1>
             <br>
           <transition v-if="show" name="slide-fade">
               <v-layout
