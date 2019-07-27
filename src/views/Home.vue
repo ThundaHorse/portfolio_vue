@@ -49,7 +49,7 @@
               <h3>
                 I am a software engineer who crafts precise and aesthetically pleasing web apps.
                   <br>
-                I enjoy learning new tools and hwo to optimize the tools I already use.
+                I enjoy learning new tools and how to optimize the tools I already use.
               </h3>
 
                 <br>
