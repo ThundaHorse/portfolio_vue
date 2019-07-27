@@ -5,7 +5,9 @@ import axios from 'axios'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import VueScrollReveal from 'vue-scroll-reveal';
+import VueParticles from 'vue-particles'
 
+Vue.use(VueParticles)
 Vue.use(Vuetify)
 Vue.use(VueScrollReveal);
 

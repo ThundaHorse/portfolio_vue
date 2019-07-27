@@ -4,46 +4,71 @@
       height="1050"
       src="https://appcyla.files.wordpress.com/2015/02/m1.jpg"
       >
-      <v-layout
-        align-center
-        column
-        justify-center
-      >
 
-        <span class="animation" animation>
+        <vue-particles
+          color="#dedede"
+          :particleOpacity="0.4"
+          :particlesNumber="90"
+          shapeType="circle"
+          :particleSize="4"
+          linesColor="#dedede"
+          :linesWidth="1"
+          :lineLinked="true"
+          :lineOpacity="0.4"
+          :linesDistance="150"
+          :moveSpeed="3"
+          :hoverEffect="true"
+          hoverMode="grab"
+          :clickEffect="true"
+          clickMode="push"
+        ></vue-particles>
 
-          <div v-if="show">
-            <h2>
-              <p>
-                Hello there
-              </p>
-            </h2>
-            <h1>
-              <p>
-                My name is Abraham Kim. 
+        <v-layout
+          align-center
+          column
+          justify-center
+        >
+
+          <span class="animation" animation>
+
+            <div v-if="show">
+              <h2>
+                <p>
+                  Hello there
+                </p>
+              </h2>
+
+              <h1>
+                <p>
+                  My name is Abraham Kim. 
+                    <br>
+                  I put pieces of the web together with my tools.
+                </p>
+              </h1>
+
+              <h3>
+                I am a software engineer who crafts precise and aesthetically pleasing web apps.
                   <br>
-                I put pieces of the web together with my tools.
-              </p>
-            </h1>
-            <h3>
-              I am a software engineer who crafts precise and aesthetically pleasing web apps.
-                <br>
-              I enjoy learning new tools and hwo to optimize the tools I already use.
-            </h3>
-              <br>
-            <span class="iconlinks">
-              <a href="https://www.github.com/ThundaHorse"><img
-                  src="https://image.flaticon.com/icons/png/512/3/3641.png"
-                  style="height: 30px; width: 30px; float: left;" atl="Github"></a>
-              <a href="https://www.linkedin.com/in/abrahamtkim/"><img
-                  src="https://image.flaticon.com/icons/png/512/61/61109.png"
-                  style="height: 30px; width: 30px; float: left; margin-left: 10px;" atl="LinkedIn"></a>
-            </span>
-          </div>
-          
-        </span>
+                I enjoy learning new tools and hwo to optimize the tools I already use.
+              </h3>
 
-      </v-layout>
+                <br>
+
+              <span class="iconlinks">
+                <a href="https://www.github.com/ThundaHorse"><img
+                    src="https://image.flaticon.com/icons/png/512/3/3641.png"
+                    style="height: 30px; width: 30px; float: left;" atl="Github"></a>
+                <a href="https://www.linkedin.com/in/abrahamtkim/"><img
+                    src="https://image.flaticon.com/icons/png/512/61/61109.png"
+                    style="height: 30px; width: 30px; float: left; margin-left: 10px;" atl="LinkedIn"></a>
+              </span>
+
+            </div>
+
+          </span>
+
+        </v-layout>
+
     </v-parallax>
 
     <v-parallax
@@ -88,6 +113,7 @@
                 <li>Laravel</li>
             </div>
           </div>
+
         </transition>
         <hr>
 
@@ -148,6 +174,43 @@
                 </v-window>
               </v-flex>
             </v-layout>
+
+
+            <br>
+            <br>
+          <h1>Skills</h1>
+            <br>
+          <span id="proficiency">
+            <v-progress-circular id="ruby" :value="90" :size="100" :width="8" color="red">
+              <img src="https://assets.webiconspng.com/uploads/2017/09/Ruby-PNG-Image-57218.png"
+                style="height: 30px; width: 30x;" alt="Ruby">
+            </v-progress-circular> 
+
+            <v-progress-circular id="rubyonrails" :value="85" :size="100" :width="8" color="red">
+
+            </v-progress-circular>
+
+            <v-progress-circular id="js" :value="80" :size="100" :width="8" color="green">
+              <img src="https://cdn2.iconfinder.com/data/icons/nodejs-1/512/nodejs-512.png"
+                        style="height: auto; width: 55px;" alt="Javascript">
+            </v-progress-circular> 
+
+            <v-progress-circular id="vue" :value="85" :size="100" :width="8" color="lime">
+
+            </v-progress-circular>
+
+            <v-progress-circular id="html_css" :value="80" :size="100" :width="8" color="yellow">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CSS3_and_HTML5_logos_and_wordmarks.svg/640px-CSS3_and_HTML5_logos_and_wordmarks.svg.png"
+                style="height: 30px; width: auto;" alt="HTML and CSS">
+            </v-progress-circular> 
+
+            <v-progress-circular id="php" :value="40" :size="100" :width="8" color="blue">
+              <img src="https://i.ya-webdesign.com/images/elephants-svg-nursery-6.png"
+                        style="height: 30px; width: auto;" alt="PHP">
+            </v-progress-circular> 
+          </span>
+        
         </div>  
       </section>
     </v-parallax>
@@ -156,9 +219,10 @@
       
     <div id="projects">
       <v-parallax
-        height="1050"
+        height="1000"
         src="https://www.zaigham.xyz/wp-content/uploads/2018/01/material_design_wallpaper_red_034_by_charlie_henson-daa22ts.png"
         >
+          <br>
         <h1 style="margin-left: 20px;">Here's some stuff I worked on</h1>
           <v-layout column>
             <v-timeline :dense="$vuetify.breakpoint.smAndDown">
@@ -350,16 +414,19 @@
     display: inline;
   }
   .animation {
-    animation: fadein 1s;
+    transform: translate(0%,-200%);
+    -ms-transform: translate(0%,-200%);
+    animation: fadein 5s;
+    display: relative;
   } 
-  @keyframes fadein {
+  /* @keyframes fadein {
     0% {
       transform: scale(0);
     }
     100% {
       transform: scale(1);
     }
-  }
+  } */
   section {
     height: 100vh;
   }
