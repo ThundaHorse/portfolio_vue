@@ -28,45 +28,43 @@
           column
           justify-center
         >
+          <!-- <span class="overflow-x-scroll-only-sm-and-down"> -->
+            <span class="animation" animation>
+              <div v-if="show">
+                <h2>
+                  <p>
+                    Hello there
+                  </p>
+                </h2>
 
-          <span class="animation" animation>
+                <h1>
+                  <p>
+                    My name is Abraham Kim. 
+                      <br>
+                    I put pieces of the web together with my tools.
+                  </p>
+                </h1>
 
-            <div v-if="show">
-              <h2>
-                <p>
-                  Hello there
-                </p>
-              </h2>
-
-              <h1>
-                <p>
-                  My name is Abraham Kim. 
+                <h3>
+                  I am a software engineer who crafts precise and aesthetically pleasing web apps.
                     <br>
-                  I put pieces of the web together with my tools.
-                </p>
-              </h1>
+                  I enjoy learning new tools and how to optimize the tools I already use.
+                </h3>
 
-              <h3>
-                I am a software engineer who crafts precise and aesthetically pleasing web apps.
                   <br>
-                I enjoy learning new tools and how to optimize the tools I already use.
-              </h3>
 
-                <br>
+                <span class="iconlinks">
+                  <a href="https://www.github.com/ThundaHorse"><img
+                      src="https://image.flaticon.com/icons/png/512/3/3641.png"
+                      style="height: 30px; width: 30px; float: left;" atl="Github"></a>
+                  <a href="https://www.linkedin.com/in/abrahamtkim/"><img
+                      src="https://image.flaticon.com/icons/png/512/61/61109.png"
+                      style="height: 30px; width: 30px; float: left; margin-left: 10px;" atl="LinkedIn"></a>
+                </span>
 
-              <span class="iconlinks">
-                <a href="https://www.github.com/ThundaHorse"><img
-                    src="https://image.flaticon.com/icons/png/512/3/3641.png"
-                    style="height: 30px; width: 30px; float: left;" atl="Github"></a>
-                <a href="https://www.linkedin.com/in/abrahamtkim/"><img
-                    src="https://image.flaticon.com/icons/png/512/61/61109.png"
-                    style="height: 30px; width: 30px; float: left; margin-left: 10px;" atl="LinkedIn"></a>
-              </span>
-
-            </div>
-
-          </span>
-
+              </div>
+            </span>
+          <!-- </span> -->
         </v-layout>
 
     </v-parallax>
@@ -270,6 +268,7 @@
     <div id="projects">
       <v-parallax
         height="1050"
+        class="overflow-x-scroll-only-sm-and-down"
         src="https://www.zaigham.xyz/wp-content/uploads/2018/01/material_design_wallpaper_red_034_by_charlie_henson-daa22ts.png"
         >
         <section v-scroll-reveal.reset="{ delay: 300 }">
