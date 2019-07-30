@@ -1,5 +1,8 @@
 <template>
   <div class='home'>
+
+    <span :fullscreen="$vuetify.breakpoint.xsOnly">
+
     <v-parallax
       height="1050"
       src="https://appcyla.files.wordpress.com/2015/02/m1.jpg"
@@ -68,6 +71,8 @@
         </v-layout>
 
     </v-parallax>
+      
+    </span>
       <hr>
     <div class="about">
       <v-parallax
@@ -484,12 +489,13 @@
 </style>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
   data: function() {
     return {
-      abe: [],
+      // abe: [],
+      isMobile: false,
       length: 2,
       window: 0,
       show: true, 
@@ -510,14 +516,24 @@ export default {
     };
   },
   created: function() {
-    axios.get('/abe').then(response => {
-      this.abe = response.data; 
-    })
+   
+  },
+  beforeDestroy () {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', this.onResize, { passive: true })
+    }
+  },
+  mounted () {
+    this.onResize()
+    window.addEventListener('resize', this.onResize, { passive: true })
   },
   methods: {
     redirButton(input) {
       window.location.replace(input);
-    }
+    },
+    onResize () {
+      this.isMobile = window.innerWidth < 600
+    },
   }
 };
 </script>
