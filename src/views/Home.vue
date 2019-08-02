@@ -76,7 +76,7 @@
       <hr>
     <div class="about">
       <v-parallax
-        height="1050"
+        height="1080"
         src="https://i.redd.it/4pgc1u4rdrv21.jpg"
         >
         <section v-scroll-reveal.reset="{ delay: 300 }">
@@ -121,10 +121,12 @@
                   <div id="techs">
                     <li>Javascript (ES6)</li>  <b> • </b>
                     <li>VueJS</li>  <b> • </b>
+                    <li>React</li> <b> • </b>
                     <li>Ruby</li>  <b> • </b>
                     <li>Ruby on Rails</li>  
                     <br>
                     <li>SQL</li>  <b> • </b>
+                    <li>Express</li> <b> • </b>
                     <li>HTML & CSS</li>  <b> • </b>  
                     <li>Git & Bash</li>  <b> • </b>
                     <li>PHP</li>  <b> • </b>
@@ -197,10 +199,10 @@
               <br>
               <br>
             <h1>Skills</h1>
-              <br>
+              <!-- <br> -->
             <v-container>
               <v-flex>
-                <v-card dark raised>
+                <v-card dark raised mb-2>
                   <v-layout id="proficiency" 
                     align-center
                     row
@@ -268,6 +270,8 @@
         <br>
       </v-parallax>
     </div>
+
+      <!-- <br> -->
       <hr>
       
     <div id="projects">
