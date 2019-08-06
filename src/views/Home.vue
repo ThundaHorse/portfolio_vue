@@ -270,7 +270,7 @@
               </v-layout>
               <br>
               <br>
-      <!-- Non-mobile skills -->
+      <!-- Mobile skills -->
             <v-container class="hidden-sm-and-down">
               <h1>Skills</h1>
                 <br />
@@ -338,7 +338,7 @@
                 </v-card>
               </v-flex>
             </v-container>
-      <!-- Mobile skills -->
+      <!-- Non-Mobile skills -->
             <v-container class="hidden-sm-and-up">
               <h1>Skills</h1>
                 <br>
@@ -403,7 +403,6 @@
               </v-flex>
 
             </v-container>
-
           </div>  
         </section>
       </v-flex>        
