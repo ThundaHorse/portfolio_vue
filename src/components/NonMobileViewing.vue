@@ -6,11 +6,10 @@
         height="100%"
         src="https://appcyla.files.wordpress.com/2015/02/m1.jpg"
         > 
-
         <div class="box-left-mini" style="height: inherit;">
             <div class="front">
               <span>
-                <div class="hidden-sm-and-down">
+                <div class="hidden-xs-and-down">
                   <v-layout justify-center>
                     <div class="intro">
                       <h2>
@@ -35,7 +34,7 @@
                         Honing my skills to create efficient and concise code is my goal.
                       </h3>
 
-                        <br>
+                        <!-- <br> -->
 
                       <span class="iconlinks">
                         <a href="https://www.github.com/ThundaHorse"><img
@@ -78,7 +77,7 @@
     </div>
       <!-- Non-mobile About -->
     <div class="about">
-      <div class="hidden-sm-and-down about">
+      <div class="hidden-xs-and-down about">
         <v-parallax
           height="100%"
           src="https://i.redd.it/4pgc1u4rdrv21.jpg"
@@ -170,7 +169,7 @@
                 
                     <v-flex>
                       <v-window
-                        dark="true"
+                        dark
                         v-model="window"
                         class="elevation-3"
                         vertical
@@ -198,95 +197,90 @@
                   </v-layout>
                   <!-- <br> -->
                   <!-- <br> -->
-                <!-- Non-mobile skills -->
-                <v-container class="hidden-sm-and-down">
-                  <h1>Skills</h1>
-                    <br />
-                  <v-flex>
-                    <v-card dark raised mb-2>
-                      <v-layout id="proficiency" 
-                        align-center
-                        row
-                        justify-center
-                      >
-                        <v-layout column align-center justify-center mt-4>
-                          <v-progress-circular id="ruby" class="mx-5" :value="90" :size="100" :width="8" color="red">
-                            <img src="https://assets.webiconspng.com/uploads/2017/09/Ruby-PNG-Image-57218.png"
-                              style="height: 30px; width: 30x;" alt="Ruby">
-                          </v-progress-circular>    
-                            <br>
-                            <p>Ruby</p>
-                        </v-layout>          
+          <!-- Non-mobile skills -->
+        <v-container class="hidden-xs-and-down">
+          <h1>Skills</h1>
+            <br />
+          <v-flex>
+            <v-card dark raised mb-2>
+              <v-layout id="proficiency" 
+                align-center justify-space-between row fill-height
+              >
+                <v-layout mt-2 column align-center justify-center>
+                  <v-progress-circular id="ruby" class="mx-5" :value="90" :size="85" :width="5" color="red">
+                    <img src="https://assets.webiconspng.com/uploads/2017/09/Ruby-PNG-Image-57218.png"
+                      style="height: 30px; width: 30x;" alt="Ruby">
+                  </v-progress-circular>    
+                    <br>
+                    <p>Ruby</p>
+                </v-layout>          
 
-                        <v-layout column align-center justify-center>
-                          <v-progress-circular id="rubyonrails" class="mx-5" :value="85" :size="100" :width="8" color="red darken-4">
-                            <img src="https://www.e-yug.com/wp-content/uploads/2017/07/rails-9b13de39de9d2eed10a2418734ee1e584cdc9634c04206af1c2bfcc8b0d0e3d5-350x350.png" style="height: auto; width: 40px;" alt="ror">
-                          </v-progress-circular>
-                            <br>
-                          <p>Ruby on Rails</p>
-                        </v-layout>
+                <v-layout mt-2 column align-center justify-center>
+                  <v-progress-circular id="rubyonrails" class="mx-5" :value="85" :size="85" :width="5" color="red darken-4">
+                    <img src="https://www.e-yug.com/wp-content/uploads/2017/07/rails-9b13de39de9d2eed10a2418734ee1e584cdc9634c04206af1c2bfcc8b0d0e3d5-350x350.png" style="height: auto; width: 40px;" alt="ror">
+                  </v-progress-circular>
+                    <br>
+                  <p>Ruby on Rails</p>
+                </v-layout>
 
-                        <v-layout column align-center justify-center>
-                          <v-progress-circular id="js" class="mx-5" :value="80" :size="100" :width="8" color="green">
-                            <img src="https://cdn2.iconfinder.com/data/icons/nodejs-1/512/nodejs-512.png"
-                                      style="height: auto; width: 55px;" alt="Javascript">
-                          </v-progress-circular> 
-                              <br>
-                            <p>Javascript(ES6)</p>
-                        </v-layout>
+                <v-layout mt-2 column align-center justify-center>
+                  <v-progress-circular id="js" class="mx-5" :value="80" :size="85" :width="5" color="green">
+                    <img src="https://cdn2.iconfinder.com/data/icons/nodejs-1/512/nodejs-512.png"
+                              style="height: auto; width: 55px;" alt="Javascript">
+                  </v-progress-circular> 
+                      <br>
+                    <p>Javascript(ES6)</p>
+                </v-layout>
 
-                        <v-layout column align-center justify-center>              
-                          <v-progress-circular id="vue" class="mx-5" :value="85" :size="100" :width="8" color="lime">
-                            <img src="https://vuejs.org/images/logo.png" style="height: auto; width: 35px;" alt="VueJS">
-                          </v-progress-circular>
-                              <br>
-                            <p>VueJS</p>
-                        </v-layout>
-                        
-                        <v-layout column align-center justify-center>
-                          <v-progress-circular id="php" class="mx-5" :value="35" :size="100" :width="8" color="blue lighten-1">
-                            <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png"
-                                      style="height: 30px; width: auto;" alt="PHP">
-                          </v-progress-circular> 
-                              <br>
-                              <p>React</p>
-                        </v-layout>
-                            <br>
+                <v-layout mt-2 column align-center justify-center>
+                  <v-progress-circular id="vue" class="mx-5" :value="85" :size="85" :width="5" color="lime">
+                    <img src="https://vuejs.org/images/logo.png" style="height: auto; width: 35px;" alt="VueJS">
+                  </v-progress-circular>
+                      <br>
+                    <p>VueJS</p>
+                </v-layout>
+                
+                <v-layout mt-2 column align-center justify-center>
+                  <v-progress-circular id="php" class="mx-5" :value="35" :size="85" :width="5" color="blue lighten-1">
+                    <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png"
+                              style="height: 30px; width: auto;" alt="PHP">
+                  </v-progress-circular> 
+                      <br>
+                      <p>React</p>
+                </v-layout>
+                    <br>
 
-                        <v-layout column align-center justify-center>
-                          <v-progress-circular id="html_css" class="mx-5" :value="80" :size="100" :width="8" color="yellow">
-                            <img 
-                              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CSS3_and_HTML5_logos_and_wordmarks.svg/640px-CSS3_and_HTML5_logos_and_wordmarks.svg.png"
-                              style="height: 30px; width: auto;" alt="HTML and CSS">
-                          </v-progress-circular> 
-                              <br>
-                            <p>HTML & CSS</p>
-                        </v-layout>
-                        
-                        <v-layout column align-center justify-center>
-                          <v-progress-circular id="php" class="mx-5" :value="40" :size="100" :width="8" color="purple lighten-3">
-                            <img src="https://i.ya-webdesign.com/images/elephants-svg-nursery-6.png"
-                                      style="height: 30px; width: auto;" alt="PHP">
-                          </v-progress-circular> 
-                              <br>
-                              <p>PHP</p>
-                        </v-layout>                
-
-                      </v-layout>
-                    </v-card>
-                  </v-flex>
-                </v-container>
+                <v-layout mt-2 column align-center justify-center>
+                  <v-progress-circular id="html_css" class="mx-5" :value="80" :size="85" :width="5" color="yellow">
+                    <img 
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CSS3_and_HTML5_logos_and_wordmarks.svg/640px-CSS3_and_HTML5_logos_and_wordmarks.svg.png"
+                      style="height: 30px; width: auto;" alt="HTML and CSS">
+                  </v-progress-circular> 
+                      <br>
+                    <p>HTML & CSS</p>
+                </v-layout>
+                
+                <v-layout mt-2 column align-center justify-center>
+                  <v-progress-circular id="php" class="mx-5" :value="40" :size="85" :width="5" color="purple lighten-3">
+                    <img src="https://i.ya-webdesign.com/images/elephants-svg-nursery-6.png"
+                              style="height: 30px; width: auto;" alt="PHP">
+                  </v-progress-circular> 
+                      <br>
+                      <p>PHP</p>
+                </v-layout>                
+              </v-layout>
+            </v-card>
+          </v-flex>
+        </v-container>
               </div>  
-        
             </section>
           </v-container>
-
           </v-flex>
         </v-parallax>
       </div>
     </div>
         <!-- Non-mobile projects -->
-    <div class="hidden-sm-and-down project">
+    <div class="hidden-xs-and-down project">
       <div id="desktop-projects">
         <v-parallax
           height="100%"
